@@ -83,13 +83,13 @@ endif
 
 set wildignore=*.swp,*.bak,*.pyc,*.class,.svn
 " 突出显示当前行等
-set cursorcolumn
-set cursorline          " 突出显示当前行
+" set cursorcolumn
+" set cursorline          " 突出显示当前行
 
 
 "设置 退出vim后，内容显示在终端屏幕, 可以用于查看和复制
 "好处：误删什么的，如果以前屏幕打开，可以找回
-set t_ti= t_te=
+" set t_ti= t_te=
 
 
 "- 则点击光标不会换,用于复制
@@ -154,7 +154,7 @@ set matchtime=2
 
 "设置文内智能搜索提示
 " 高亮search命中的文本。
-set hlsearch
+" set hlsearch
 " 打开增量搜索模式,随着键入即时搜索
 set incsearch
 " 搜索时忽略大小写
@@ -193,9 +193,9 @@ set autoindent    " 打开自动缩进
 " never add copyindent, case error   " copy the previous indentation on autoindenting
 
 " tab相关变更
-set tabstop=4     " 设置Tab键的宽度        [等同的空格个数]
-set shiftwidth=4  " 每一次缩进对应的空格数
-set softtabstop=4 " 按退格键时可以一次删掉 4 个空格
+set tabstop=2     " 设置Tab键的宽度        [等同的空格个数]
+set shiftwidth=2  " 每一次缩进对应的空格数
+set softtabstop=2 " 按退格键时可以一次删掉 4 个空格
 set smarttab      " insert tabs on the start of a line according to shiftwidth, not tabstop 按退格键时可以一次删掉 4 个空格
 set expandtab     " 将Tab自动转化成空格    [需要输入真正的Tab键时，使用 Ctrl+V + Tab]
 set shiftround    " 缩进时，取整 use multiple of shiftwidth when indenting with '<' and '>'
@@ -210,7 +210,7 @@ set nrformats=
 
 
 " 相对行号      行号变成相对，可以用 nj  nk   进行跳转 5j   5k 上下跳5行
-set relativenumber number
+" set relativenumber number
 au FocusLost * :set norelativenumber number
 au FocusGained * :set relativenumber
 " 插入模式下用绝对行号, 普通模式下用相对
@@ -286,10 +286,10 @@ endif
 " 主要按键重定义
 
 " 关闭方向键, 强迫自己用 hjkl
-map <Left> <Nop>
-map <Right> <Nop>
-map <Up> <Nop>
-map <Down> <Nop>
+" map <Left> <Nop>
+" map <Right> <Nop>
+" map <Up> <Nop>
+" map <Down> <Nop>
 
 "Treat long lines as break lines (useful when moving around in them)
 "se swap之后，同物理行上线直接跳
@@ -389,8 +389,8 @@ noremap <silent><leader>/ :nohls<CR>
 " :b1 :b2   :bf :bl
 nnoremap [b :bprevious<cr>
 nnoremap ]b :bnext<cr>
-noremap <left> :bp<CR>
-noremap <right> :bn<CR>
+" noremap <left> :bp<CR>
+" noremap <right> :bn<CR>
 
 
 " tab 操作
@@ -576,9 +576,9 @@ endif
 
 " Set extra options when running in GUI mode
 if has("gui_running")
-    set guifont=Monaco:h14
+    set guifont=Courier\ New:h14
     if has("gui_gtk2")   "GTK2
-        set guifont=Monaco\ 12,Monospace\ 12
+        set guifont=Courier\ New\ 14,Monaco\ 12,Monospace\ 12
     endif
     set guioptions-=T
     set guioptions+=e
@@ -603,7 +603,7 @@ endif
 " theme主题
 set background=dark
 set t_Co=256
-colorscheme solarized
+colorscheme delek
 " colorscheme Tomorrow-Night
 " colorscheme Tomorrow-Night-Bright
 " colorscheme desert
@@ -624,3 +624,13 @@ highlight clear SpellRare
 highlight SpellRare term=underline cterm=underline
 highlight clear SpellLocal
 highlight SpellLocal term=underline cterm=underline
+
+nmap qq :q!<cr>
+nmap zz :w<cr>
+nmap yy ggVG"+y
+nmap ff :FormatCode<cr>
+nmap <UP> gk
+imap <UP> <ESC>gka
+nmap <DOWN> gj
+imap <DOWN> <ESC>gja
+

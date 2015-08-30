@@ -586,6 +586,12 @@ Bundle 'Glench/Vim-Jinja2-Syntax'
 " ###### nginx #########
 " Bundle 'evanmiller/nginx-vim-syntax'
 
+" ###### codefmt #########
+Bundle 'google/vim-maktaba'
+Bundle 'google/vim-codefmt'
+Bundle 'google/vim-glaive'
+call glaive#Install()
+Glaive codefmt plugin[mappings]
 
 " ####### temp #######
 " python code format
