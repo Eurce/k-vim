@@ -154,7 +154,7 @@ set matchtime=2
 
 "设置文内智能搜索提示
 " 高亮search命中的文本。
-" set hlsearch
+set hlsearch!
 " 打开增量搜索模式,随着键入即时搜索
 set incsearch
 " 搜索时忽略大小写
@@ -320,7 +320,8 @@ function! HideNumber()
   endif
   set number?
 endfunc
-nnoremap <F2> :call HideNumber()<CR>
+" nnoremap <F2> :call HideNumber()<CR>
+nnoremap <F2> :set number! number?<CR>
 nnoremap <F3> :set list! list?<CR>
 nnoremap <F4> :set wrap! wrap?<CR>
               "set paste
