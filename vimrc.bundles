@@ -155,7 +155,7 @@ let g:UltiSnipsJumpBackwordTrigger = "<c-k>"
 
 
 " 自动补全单引号，双引号等
-Bundle 'Raimondi/delimitMate'
+" Bundle 'Raimondi/delimitMate'
 
 "" for python docstring ",优化输入
 au FileType python let b:delimitMate_nesting_quotes = ['"']
